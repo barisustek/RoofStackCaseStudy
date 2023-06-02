@@ -5,7 +5,7 @@ Feature: Create User operation test cases for given api.
       | firstName | lastName | userName | password  |
       | Baris     | Ustek    | bustek   | Study123* |
     Then Http status code should be 200
-    And Users should return
+    And UserId should return
       | userId                               |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 |
 
@@ -17,8 +17,8 @@ Feature: Create User operation test cases for given api.
 
     Examples:
       | firstName                                          | errorMessages                                      |
-      | <null>                                             | firstName cannot be null                           |
-      |                                                    | firstName cannot be empty                          |
+      | [Null]                                             | firstName cannot be null                           |
+      | [EmptyString]                                      | firstName cannot be empty                          |
       | a                                                  | firstName must be between 2-50 characters.         |
       | abcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcde | firstName must be between 2-50 characters.         |
       | 123                                                | firstName can only contain alpha characters. [A-Z] |
@@ -35,8 +35,8 @@ Feature: Create User operation test cases for given api.
 
     Examples:
       | lastName                                           | errorMessages                                     |
-      | <null>                                             | lastName cannot be null.                          |
-      |                                                    | lastName cannot be empty.                         |
+      | [Null]                                             | lastName cannot be null.                          |
+      | [EmptyString]                                      | lastName cannot be empty.                         |
       | a                                                  | lastName must be between 2-50 characters.         |
       | abcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcde | lastName must be between 2-50 characters.         |
       | 123                                                | lastName can only contain alpha characters. [A-Z] |
@@ -52,8 +52,8 @@ Feature: Create User operation test cases for given api.
 
     Examples:
       | username      | errorMessages                             |
-      | <null>        | username cannot be null or empty.         |
-      |               | username cannot be null or empty.         |
+      | [Null]        | username cannot be null or empty.         |
+      | [EmptyString] | username cannot be null or empty.         |
       | a             | username must be between 4-12 characters. |
       | ab            | username must be between 4-12 characters. |
       | abc           | username must be between 4-12 characters. |
@@ -68,8 +68,8 @@ Feature: Create User operation test cases for given api.
 
     Examples:
       | password      | errorMessages                             |
-      | <null>        | username cannot be null or empty.         |
-      |               | username cannot be null or empty.         |
+      | [Null]        | username cannot be null or empty.         |
+      | [EmptyString] | username cannot be null or empty.         |
       | a             | username must be between 4-12 characters. |
       | ab            | username must be between 4-12 characters. |
       | abc           | username must be between 4-12 characters. |

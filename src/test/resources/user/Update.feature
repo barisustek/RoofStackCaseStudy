@@ -5,7 +5,7 @@ Feature: Update User operation test cases for given api.
       | firstName | lastName |
       | Baris     | Ustek    |
     Then Http status code should be 200
-    And Users should return
+    And UserId should return
       | userId   |
       | <userId> |
 
@@ -21,8 +21,8 @@ Feature: Update User operation test cases for given api.
 
     Examples:
       | userId                               | firstName                                          | errorMessages                                      |
-      | c4f6c088-f91b-494e-b7f0-a08f48df3180 | <null>                                             | firstName cannot be null                           |
-      | c4f6c088-f91b-494e-b7f0-a08f48df3180 |                                                    | firstName cannot be empty                          |
+      | c4f6c088-f91b-494e-b7f0-a08f48df3180 | [Null]                                             | firstName cannot be null                           |
+      | c4f6c088-f91b-494e-b7f0-a08f48df3180 | [EmptyString]                                      | firstName cannot be empty                          |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | a                                                  | firstName must be between 2-50 characters.         |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | abcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcde | firstName must be between 2-50 characters.         |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | 123                                                | firstName can only contain alpha characters. [A-Z] |
@@ -39,8 +39,8 @@ Feature: Update User operation test cases for given api.
 
     Examples:
       | userId                               | lastName                                           | errorMessages                                     |
-      | c4f6c088-f91b-494e-b7f0-a08f48df3180 | <null>                                             | lastName cannot be null.                          |
-      | c4f6c088-f91b-494e-b7f0-a08f48df3180 |                                                    | lastName cannot be empty.                         |
+      | c4f6c088-f91b-494e-b7f0-a08f48df3180 | [Null]                                             | lastName cannot be null.                          |
+      | c4f6c088-f91b-494e-b7f0-a08f48df3180 | [EmptyString]                                      | lastName cannot be empty.                         |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | a                                                  | lastName must be between 2-50 characters.         |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | abcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcde | lastName must be between 2-50 characters.         |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | 123                                                | lastName can only contain alpha characters. [A-Z] |

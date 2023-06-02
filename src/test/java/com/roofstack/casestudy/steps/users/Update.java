@@ -4,11 +4,11 @@ import com.roofstack.casestudy.models.user.UserRequest;
 import com.roofstack.casestudy.steps.Settings;
 import io.cucumber.java.en.When;
 
-public class UpdateUser {
+public class Update {
 
     Settings settings;
 
-    public UpdateUser(Settings settings){
+    public Update(Settings settings){
 
         this.settings = settings;
 

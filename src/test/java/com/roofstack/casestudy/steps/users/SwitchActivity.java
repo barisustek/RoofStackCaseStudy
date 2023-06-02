@@ -4,21 +4,21 @@ import com.roofstack.casestudy.models.user.UserRequest;
 import com.roofstack.casestudy.steps.Settings;
 import io.cucumber.java.en.When;
 
-public class SwitchUser {
+public class SwitchActivity {
 
     Settings settings;
 
-    public SwitchUser(Settings settings){
+    public SwitchActivity(Settings settings) {
 
         this.settings = settings;
 
     }
 
     @When("^PATCH (.*) endpoint is called with parameters$")
-    public void postEndpointCalledWithParameters(String endpoint, UserRequest userRequest){
+    public void postEndpointCalledWithParameters(String endpoint, UserRequest userRequest) {
 
         settings.requestHandler.patch(endpoint,
-                                      userRequest);
+                userRequest);
 
     }
 

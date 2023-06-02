@@ -5,9 +5,6 @@ import io.cucumber.core.internal.com.fasterxml.jackson.databind.annotation.JsonS
 
 import java.util.UUID;
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-public record UserResponse(UUID id,
-                           String username,
-                           String firstName,
-                           String lastName,
-                           Boolean isActive) {
+public record UserId(UUID userId, Boolean isActive) {
+
 }

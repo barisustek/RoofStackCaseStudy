@@ -3,11 +3,11 @@ package com.roofstack.casestudy.steps.users;
 import com.roofstack.casestudy.steps.Settings;
 import io.cucumber.java.en.When;
 
-public class GetUser {
+public class Get {
 
     Settings settings;
 
-    public GetUser(Settings settings){
+    public Get(Settings settings){
 
         this.settings = settings;
 

@@ -13,6 +13,6 @@ import static io.cucumber.core.options.Constants.*;
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME,value = "pretty")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME,value = "json:target/cucumber-report/cucumber.json, html:target/cucumber-report/cucumber.html")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.roofstack.casestudy.steps")
-@ConfigurationParameter(key = FEATURES_PROPERTY_NAME, value = "src/test/resources/features")
+@ConfigurationParameter(key = FEATURES_PROPERTY_NAME, value = "src/test/resources/user")
 public class CucumberTest {
 }

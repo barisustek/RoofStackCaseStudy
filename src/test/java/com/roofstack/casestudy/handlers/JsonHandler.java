@@ -14,7 +14,7 @@ public class JsonHandler {
     public JsonHandler() {
         GsonBuilder gsonBuilder = new GsonBuilder();
         // Configure Gson if needed, such as setting date format or exclusion strategies
-        gson = gsonBuilder.create();
+        gson = gsonBuilder.serializeNulls().create();
     }
 
     public String serializeRecord(Record record) {
@@ -25,7 +25,7 @@ public class JsonHandler {
         return gson.fromJson(json, Record.class);
     }
 
-    public String serializeRecordList(List<Record> recordList) {
+    public String serializeRecordList(List<?> recordList) {
         return gson.toJson(recordList);
     }
 

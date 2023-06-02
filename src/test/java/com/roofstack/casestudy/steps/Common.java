@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.junit.jupiter.api.Assertions;
 import org.skyscreamer.jsonassert.JSONAssert;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -47,6 +48,11 @@ public class Common {
 
     }
 
+    @DataTableType(replaceWithEmptyString = "[blank]")
+    public String stringType(String cell) {
+        return cell;
+    }
+
     @Then("^Http status code should be ([1-5][0-9][0-9])$")
     public void statusCodeShouldBe(int statusCode) {
 
@@ -57,11 +63,14 @@ public class Common {
     @And("Users should return")
     public void inResponseBodyUserIdShouldBe(UserResponse userResponse) {
 
+        System.out.println("Api " + settings.requestHandler.getResponseBody());
+        System.out.println("Data " + settings.jsonHandler.serializeRecord(userResponse));
+
         try {
 
             JSONAssert.assertEquals(settings.requestHandler.getResponseBody(),
                     settings.jsonHandler.serializeRecord(userResponse),
-                    true);
+                    false);
 
         }catch (JSONException e){
 
@@ -76,6 +85,23 @@ public class Common {
 
         Assertions.assertEquals(errorMessage,settings.requestHandler.getValueFromPath("errorMessages"),"Error message is different than expected");
         Assertions.assertEquals(statusCode,settings.requestHandler.getStatusCode(),"Http status code is different than expected");
+
+    }
+
+    @And("Users List should return")
+    public void usersListShouldReturn(List<UserResponse> userResponse) {
+
+        try {
+
+            JSONAssert.assertEquals(settings.requestHandler.getResponseBody(),
+                    settings.jsonHandler.serializeRecordList(userResponse),
+                    false);
+
+        }catch (JSONException e){
+
+            fail("Assertion error in given JSON");
+
+        }
 
     }
 }

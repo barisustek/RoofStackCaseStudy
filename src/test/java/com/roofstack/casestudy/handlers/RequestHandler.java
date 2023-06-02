@@ -4,9 +4,6 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.ResponseOptions;
 
-import java.util.List;
-import java.util.Map;
-
 public class RequestHandler {
     public static ResponseOptions responseOptions;
 
@@ -65,7 +62,7 @@ public class RequestHandler {
 
     public String getResponseBody(){
 
-        return responseOptions.body().toString();
+        return responseOptions.body().asString();
 
     }
 

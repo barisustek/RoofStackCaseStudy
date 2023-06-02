@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools {
-      maven '$MAVEN_HOME'
-      jdk '$JAVA_HOME'
+      maven 'Maven-3.9.2'
+      jdk '/var/jenkins_home/downloads'
     }
     stages {
         stage('Checkout') {

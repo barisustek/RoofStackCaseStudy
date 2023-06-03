@@ -11,6 +11,12 @@ pipeline {
             }
         }
 
+        stage('Checkout') {
+                    steps {
+                         sh 'mvn build'
+                    }
+                }
+
         stage('Run Tests') {
             steps {
                 sh 'mvn test'

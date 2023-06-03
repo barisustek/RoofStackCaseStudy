@@ -9,9 +9,9 @@
     <version>1.0</version>
 
     <properties>
-        <java.version>20</java.version>
-        <maven.compiler.source>20</maven.compiler.source>
-        <maven.compiler.target>20</maven.compiler.target>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cucumber.version>7.11.2</cucumber.version>
         <junit.jupiter.version>5.9.2</junit.jupiter.version>
@@ -19,6 +19,7 @@
         <rest.assure.version>5.0.1</rest.assure.version>
         <google.gson.version>2.9.0</google.gson.version>
         <lombok.version>1.18.24</lombok.version>
+        <json.assert.version>1.5.1</json.assert.version>
         <common.io.version>2.11.0</common.io.version>
     </properties>
 
@@ -26,13 +27,14 @@
         <dependency>
             <groupId>org.skyscreamer</groupId>
             <artifactId>jsonassert</artifactId>
-            <version>LATEST</version>
+            <version>${json.assert.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -63,11 +65,13 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${common.io.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -79,6 +83,7 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
             <version>7.12.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

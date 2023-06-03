@@ -1,6 +1,6 @@
 ## About The Project
 
-This project is created for RoofStack case study. Test scenarios were prepared in BDD format using Cucumber.
+This project is created for RoofStack case study. Test scenarios are prepared in BDD format using Cucumber.
 
 ### Prerequisites
 
@@ -19,18 +19,17 @@ The project has the following dependencies and versions:
 
 ### Test Run
 
-For running project following code should be run in root directory :
+For running the project, the following code should be run in the root directory :
    ```sh
    mvn test
    ```
 
 ### Test report
 
-cluecumber library is used for creating test report. Tests continue if any error or fail occurs during test runs. After runs completed report created at "target/cucumber-report".
-
+Cluecumber library is used for creating test reports. Tests continue if any error or fail occurs during test runs. After runs are completed report is created at "target/cucumber-report".
 ### CI/CD
 
-Jenkins file is added for ci/cd operations. In Jenkins, Cucumber-Report plugin should be installed for reporting.
+Jenkinsfile is added for ci/cd operations. In Jenkins, Cucumber-Report plugin should be installed for reporting.
 
 ### Test Cases
 

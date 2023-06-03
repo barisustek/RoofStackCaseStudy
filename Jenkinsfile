@@ -26,8 +26,8 @@ pipeline {
 
             stage('Publish Reports') {
                 steps {
-                    archiveArtifacts artifacts: 'target/cucumber-reports/**/*.*', fingerprint: true
-                    cucumber 'target/cucumber-reports'
+                    archiveArtifacts artifacts: 'target/cucumber-report/*.*', fingerprint: true
+                    cucumber 'target/cucumber-report'
                 }
             }
         }

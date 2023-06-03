@@ -5,13 +5,13 @@ pipeline {
       jdk 'JDK17'
     }
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
                  checkout scm
             }
         }
 
-        stage('Checkout') {
+        stage('Build') {
                     steps {
                          sh 'mvn build'
                     }

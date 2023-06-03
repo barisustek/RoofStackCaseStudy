@@ -5,7 +5,7 @@ pipeline {
       jdk 'JDK17'
     }
     stages {
-        stage('Checkout') {
+        stage('Build') {
             steps {
                  checkout scm
             }

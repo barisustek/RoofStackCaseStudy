@@ -14,7 +14,7 @@ Feature: Test cases for updating operation of /users/<userId> endpoint.
       | userId                               |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 |
 
-  Scenario Outline: TC_UpdateUser_002_When /users/<userId> endpoint is called with <firstName> in request, it returns 400 and <errorMessage> in response.
+  Scenario Outline: TC_UpdateUser_002_When /users/<userId> endpoint is called with "<firstName>" in firstname field, API returns 400 and "<errorMessage>" in response.
     When PUT /users/<userId> endpoint is called with parameters
       | firstName   | lastName |
       | <firstName> | Ustek    |
@@ -32,7 +32,7 @@ Feature: Test cases for updating operation of /users/<userId> endpoint.
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | ab@123                                             | firstName can only contain alpha characters. [A-Z] |
 
 
-  Scenario Outline: TC_UpdateUser_003_When /user/<userId> endpoint is called with <lastName> in request, API returns 400 and <errorMessage> in response.
+  Scenario Outline: TC_UpdateUser_003_When /user/<userId> endpoint is called with "<lastName>" in lastname field, API returns 400 and "<errorMessage>" in response.
     When PUT /users/<userId> endpoint is called with parameters
       | firstName | lastName   |
       | Baris     | <lastName> |

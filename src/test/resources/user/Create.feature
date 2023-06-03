@@ -14,10 +14,10 @@ Feature: Test cases for creating user operation of /users endpoint.
     When POST /users endpoint is called with parameters
       | firstName   | lastName | userName | password  |
       | <firstName> | Ustek    | bustek   | Study123* |
-    Then Http status code should be 400 and returns <errorMessages> in responseBody
+    Then Http status code should be 400 and returns <errorMessage> in responseBody
 
     Examples:
-      | firstName                                          | errorMessages                                      |
+      | firstName                                          | errorMessage                                       |
       | [Null]                                             | firstName cannot be null                           |
       | [EmptyString]                                      | firstName cannot be empty                          |
       | a                                                  | firstName must be between 2-50 characters.         |
@@ -32,10 +32,10 @@ Feature: Test cases for creating user operation of /users endpoint.
     When POST /user endpoint is called with parameters
       | firstName | lastName   | userName | password  |
       | Baris     | <lastName> | bustek   | Study123* |
-    Then Http status code should be 400 and returns <errorMessages> in responseBody
+    Then Http status code should be 400 and returns <errorMessage> in responseBody
 
     Examples:
-      | lastName                                           | errorMessages                                     |
+      | lastName                                           | errorMessage                                     |
       | [Null]                                             | lastName cannot be null.                          |
       | [EmptyString]                                      | lastName cannot be empty.                         |
       | a                                                  | lastName must be between 2-50 characters.         |
@@ -49,10 +49,10 @@ Feature: Test cases for creating user operation of /users endpoint.
     When POST /user endpoint is called with parameters
       | firstName | lastName | userName   | password  |
       | Baris     | Ustek    | <username> | Study123* |
-    Then Http status code should be 400 and returns <errorMessages> in responseBody
+    Then Http status code should be 400 and returns <errorMessage> in responseBody
 
     Examples:
-      | username      | errorMessages                             |
+      | username      | errorMessage                             |
       | [Null]        | username cannot be null or empty.         |
       | [EmptyString] | username cannot be null or empty.         |
       | a             | username must be between 4-12 characters. |
@@ -65,10 +65,10 @@ Feature: Test cases for creating user operation of /users endpoint.
     When POST /user endpoint is called with parameters
       | firstName | lastName | userName | password   |
       | Baris     | Ustek    | bustek   | <password> |
-    Then Http status code should be 400 and returns <errorMessages> in responseBody
+    Then Http status code should be 400 and returns <errorMessage> in responseBody
 
     Examples:
-      | password      | errorMessages                             |
+      | password      | errorMessage                             |
       | [Null]        | username cannot be null or empty.         |
       | [EmptyString] | username cannot be null or empty.         |
       | a             | username must be between 4-12 characters. |

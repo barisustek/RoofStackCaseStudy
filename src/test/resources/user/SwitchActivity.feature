@@ -16,12 +16,12 @@ Feature: Test cases for activity switching operation of /users/<userId> endpoint
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | False  |
 
 
-  Scenario Outline: TC_SwitchUser_002_When /user endpoint is called with PATCH method with invalid status, API should return 400 and <errorMessages> in the response body.
+  Scenario Outline: TC_SwitchUser_002_When /user endpoint is called with PATCH method with invalid status, API should return 400 and <errorMessage> in the response body.
     When PATCH /user/<userId>/activity endpoint is called with parameters
       | isActive |
       | <status> |
-    Then Http status code should be 400 and returns <errorMessages> in responseBody
+    Then Http status code should be 400 and returns <errorMessage> in responseBody
 
     Examples:
-      | userId                               | status | errorMessages           |
+      | userId                               | status | errorMessage            |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 |        | isActive cannot be null |

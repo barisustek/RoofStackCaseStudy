@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
       maven 'Maven-3.9.2'
-      jdk '/var/jenkins_home/downloads'
+      jdk 'JDK17'
     }
     stages {
         stage('Checkout') {

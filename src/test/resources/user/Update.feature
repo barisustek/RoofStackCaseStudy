@@ -1,6 +1,7 @@
-Feature: Update User operation test cases for given api.
+Feature: Test cases for updating operation of /users/<userId> endpoint.
+  * Http Method : PUT
 
-  Scenario Outline: TC_UpdateUser_001_When /users/<userId> endpoint is called with PUT method and with valid values, it returns 200 and userId should return in response
+  Scenario Outline: TC_UpdateUser_001_When /users/<userId> endpoint is called with PUT method and with valid values, API returns 200 and userId should return in response
     When PUT /users/<userId> endpoint is called with parameters
       | firstName | lastName |
       | Baris     | Ustek    |
@@ -13,7 +14,7 @@ Feature: Update User operation test cases for given api.
       | userId                               |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 |
 
-  Scenario Outline: TC_UpdateUser_002_When /users/<userId> endpoint is called with <firstName> in request, it returns 400 and <errorMessages> in response
+  Scenario Outline: TC_UpdateUser_002_When /users/<userId> endpoint is called with <firstName> in request, it returns 400 and <errorMessages> in response.
     When PUT /users/<userId> endpoint is called with parameters
       | firstName   | lastName |
       | <firstName> | Ustek    |
@@ -31,7 +32,7 @@ Feature: Update User operation test cases for given api.
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | ab@123                                             | firstName can only contain alpha characters. [A-Z] |
 
 
-  Scenario Outline: TC_UpdateUser_003_When /user/<userId> endpoint is called with <lastName> in request, it returns 400 and <errorMessage> in response
+  Scenario Outline: TC_UpdateUser_003_When /user/<userId> endpoint is called with <lastName> in request, API returns 400 and <errorMessage> in response.
     When PUT /users/<userId> endpoint is called with parameters
       | firstName | lastName   |
       | Baris     | <lastName> |
@@ -47,4 +48,3 @@ Feature: Update User operation test cases for given api.
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | 123ab                                              | lastName can only contain alpha characters. [A-Z] |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | ab@                                                | lastName can only contain alpha characters. [A-Z] |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 | ab@123                                             | lastName can only contain alpha characters. [A-Z] |
-

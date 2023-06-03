@@ -1,4 +1,5 @@
-Feature: Get User operation test cases for given api.
+Feature: Test cases for getting user operation of /users/ endpoint.
+  * Http Method : GET
 
   Scenario: TC_GetUser_001_When /user endpoint is called with GET method, all users should return
     When GET /users endpoint is called without parameters
@@ -18,3 +19,11 @@ Feature: Get User operation test cases for given api.
     Examples:
       | userId                               |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 |
+
+  Scenario Outline: TC_GetUser_003_When /user endpoint is called with GET method and not existed user as a parameter, API return 404.
+    When GET /users/<userId> endpoint is called
+    Then Http status code should be 404
+
+    Examples:
+      | userId                               |
+      | a60d7406-b943-4010-9bb0-a594aae6b1c1 |

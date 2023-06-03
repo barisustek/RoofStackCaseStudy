@@ -13,7 +13,6 @@ public class JsonHandler {
 
     public JsonHandler() {
         GsonBuilder gsonBuilder = new GsonBuilder();
-        // Configure Gson if needed, such as setting date format or exclusion strategies
         gson = gsonBuilder.serializeNulls().create();
     }
 

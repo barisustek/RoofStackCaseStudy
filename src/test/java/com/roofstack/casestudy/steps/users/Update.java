@@ -17,7 +17,7 @@ public class Update {
     @When("^PUT (.*) endpoint is called with parameters$")
     public void putEndpointCalledWithParameters(String endpoint, UserRequest userRequest){
 
-        settings.requestHandler.put(endpoint,
+        settings.restHandler.put(endpoint,
                                     userRequest);
 
     }

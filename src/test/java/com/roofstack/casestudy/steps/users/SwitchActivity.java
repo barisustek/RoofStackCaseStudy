@@ -17,7 +17,7 @@ public class SwitchActivity {
     @When("^PATCH (.*) endpoint is called with parameters$")
     public void postEndpointCalledWithParameters(String endpoint, UserRequest userRequest) {
 
-        settings.requestHandler.patch(endpoint,
+        settings.restHandler.patch(endpoint,
                 userRequest);
 
     }

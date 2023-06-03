@@ -1,6 +1,7 @@
-Feature: Create User operation test cases for given api.
+Feature: Test cases for creating user operation of /users endpoint.
+  * Http Method : POST
 
-  Scenario: TC_CreateUser_001_When /user endpoint is called with POST method and with valid values, it returns 200 and userId should return in response
+  Scenario: TC_CreateUser_001_When /user endpoint is called with POST method and with valid values, API returns 200 and userId should return in the response.
     When POST /users endpoint is called with parameters
       | firstName | lastName | userName | password  |
       | Baris     | Ustek    | bustek   | Study123* |
@@ -9,7 +10,7 @@ Feature: Create User operation test cases for given api.
       | userId                               |
       | c4f6c088-f91b-494e-b7f0-a08f48df3180 |
 
-  Scenario Outline: TC_CreateUser_002_When /user endpoint is called with <firstName> in request, it returns 400 and <errorMessage> in response
+  Scenario Outline: TC_CreateUser_002_When /user endpoint is called with <firstName> in request, API returns 400 and <errorMessage> in the response.
     When POST /users endpoint is called with parameters
       | firstName   | lastName | userName | password  |
       | <firstName> | Ustek    | bustek   | Study123* |
@@ -27,7 +28,7 @@ Feature: Create User operation test cases for given api.
       | ab@123                                             | firstName can only contain alpha characters. [A-Z] |
 
 
-  Scenario Outline: TC_CreateUser_003_When /user endpoint is called with <lastName> in request, it returns 400 and <errorMessage> in response
+  Scenario Outline: TC_CreateUser_003_When /user endpoint is called with <lastName> in request, API returns 400 and <errorMessage> in the response.
     When POST /user endpoint is called with parameters
       | firstName | lastName   | userName | password  |
       | Baris     | <lastName> | bustek   | Study123* |
@@ -44,7 +45,7 @@ Feature: Create User operation test cases for given api.
       | ab@                                                | lastName can only contain alpha characters. [A-Z] |
       | ab@123                                             | lastName can only contain alpha characters. [A-Z] |
 
-  Scenario Outline: TC_CreateUser_004_When /user endpoint is called with <username> in request, it returns 400 and <errorMessage> in response
+  Scenario Outline: TC_CreateUser_004_When /user endpoint is called with <username> in request, API returns 400 and <errorMessage> in the response.
     When POST /user endpoint is called with parameters
       | firstName | lastName | userName   | password  |
       | Baris     | Ustek    | <username> | Study123* |
@@ -60,7 +61,7 @@ Feature: Create User operation test cases for given api.
       | abcdefghijklm | username must be between 4-12 characters. |
       | Study123*     | username and password cannot be same.     |
 
-  Scenario Outline: TC_CreateUser_005_When /user endpoint is called with <password> in request, it returns 400 and <errorMessage> in response
+  Scenario Outline: TC_CreateUser_005_When /user endpoint is called with <password> in request, API returns 400 and <errorMessage> in the response.
     When POST /user endpoint is called with parameters
       | firstName | lastName | userName | password   |
       | Baris     | Ustek    | bustek   | <password> |

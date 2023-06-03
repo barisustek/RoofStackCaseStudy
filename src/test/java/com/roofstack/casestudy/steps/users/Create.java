@@ -17,7 +17,7 @@ public class Create {
     @When("^POST (.*) endpoint is called with parameters$")
     public void postEndpointCalledWithParameters(String endpoint,UserRequest userRequest){
 
-        settings.requestHandler.post(endpoint,
+        settings.restHandler.post(endpoint,
                                      userRequest);
 
     }

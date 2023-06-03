@@ -16,14 +16,14 @@ public class Get {
     @When("^GET (.*) endpoint is called without parameters$")
     public void getEndpointCalledWithoutParameters(String endpoint){
 
-        settings.requestHandler.get(endpoint);
+        settings.restHandler.get(endpoint);
 
     }
 
     @When("^GET (.*) endpoint is called$")
     public void getEndpointCalled(String endpoint){
 
-        settings.requestHandler.get(endpoint);
+        settings.restHandler.get(endpoint);
 
     }
 

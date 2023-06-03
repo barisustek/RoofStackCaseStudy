@@ -16,7 +16,7 @@ public class Remove {
     @When("^DELETE (.*) endpoint is called$")
     public void getEndpointCalled(String endpoint){
 
-        settings.requestHandler.delete(endpoint);
+        settings.restHandler.delete(endpoint);
 
     }
 

@@ -63,7 +63,7 @@ public class Common {
     @Then("^Http status code should be ([1-5][0-9][0-9])$")
     public void statusCodeShouldBe(int statusCode) {
 
-        assertEquals(settings.requestHandler.getStatusCode(), statusCode);
+        assertEquals(settings.restHandler.getStatusCode(), statusCode);
 
     }
 
@@ -72,7 +72,7 @@ public class Common {
 
         try {
 
-            JSONAssert.assertEquals(settings.requestHandler.getResponseBody(),
+            JSONAssert.assertEquals(settings.restHandler.getResponseBody(),
                     settings.jsonHandler.serializeRecord(userResponse),
                     false);
 
@@ -87,8 +87,8 @@ public class Common {
     @Then("^Http status code should be ([1-5][0-9][0-9]) and returns (.*) in responseBody$")
     public void httpStatusCodeShouldBeAndReturnsErrorMessagesInResponseBody(int statusCode, String errorMessage) {
 
-        Assertions.assertEquals(errorMessage, settings.requestHandler.getValueFromPath("errorMessages"), "Error message is different than expected");
-        Assertions.assertEquals(statusCode, settings.requestHandler.getStatusCode(), "Http status code is different than expected");
+        Assertions.assertEquals(errorMessage, settings.restHandler.getValueFromPath("errorMessages"), "Error message is different than expected");
+        Assertions.assertEquals(statusCode, settings.restHandler.getStatusCode(), "Http status code is different than expected");
 
     }
 
@@ -97,7 +97,7 @@ public class Common {
 
         try {
 
-            JSONAssert.assertEquals(settings.requestHandler.getResponseBody(),
+            JSONAssert.assertEquals(settings.restHandler.getResponseBody(),
                     settings.jsonHandler.serializeRecordList(userResponse),
                     false);
 
@@ -114,7 +114,7 @@ public class Common {
 
         try {
 
-            JSONAssert.assertEquals(settings.requestHandler.getResponseBody(),
+            JSONAssert.assertEquals(settings.restHandler.getResponseBody(),
                     settings.jsonHandler.serializeRecord(userId),
                     false);
 

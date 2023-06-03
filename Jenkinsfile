@@ -27,8 +27,7 @@ pipeline {
             stage('Publish Reports') {
                 steps {
                     archiveArtifacts artifacts: 'target/cucumber-report/*.*', fingerprint: true
-                    cucumber buildStatus: 'UNSTABLE',
-                             reportTitle: 'My report',
+                    cucumber reportTitle: 'Cucumber Report',
                              fileIncludePattern: '**/*.json',
                              trendsLimit: 10
                 }

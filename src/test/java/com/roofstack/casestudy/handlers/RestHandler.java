@@ -4,10 +4,10 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.ResponseOptions;
 
-public class RequestHandler {
+public class RestHandler {
     public static ResponseOptions responseOptions;
 
-    public RequestHandler(String baseUrl){
+    public RestHandler(String baseUrl){
 
         RestAssured.baseURI = baseUrl;
 

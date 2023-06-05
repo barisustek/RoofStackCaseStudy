@@ -4,7 +4,10 @@ This project is created for RoofStack case study. Test scenarios are prepared in
 
 ### Prerequisites
 
-Java version should be 17 or above to run the tests.
+Java and Maven are required for running tests.
+
+* Java : 17+
+* Maven :3.9.2
 
 ### Dependencies
 

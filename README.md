@@ -24,6 +24,11 @@ For running the project, the following code should be run in the root directory 
    mvn test
    ```
 
+All feature files run parallel. To disable this following changes should be made : 
+   ```sh
+   cucumber.execution.parallel.enabled=false
+   ```
+
 ### Test report
 
 Cluecumber library is used for creating test reports. Tests continue if any error or fail occurs during test runs. After runs are completed report is created at "target/cucumber-report".
